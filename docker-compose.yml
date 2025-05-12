@@ -1,0 +1,11 @@
+services:
+  sql_server:
+    build: .
+    container_name: pocket_analyst_container
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=pa_Fancy_password1
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./AdventureWorksDW2022.bak:/var/opt/mssql/data/AdventureWorksDW2022.bak
